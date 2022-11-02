@@ -1,0 +1,166 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu&display=swap");
+:root {
+  --fontColor: #ccc;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Ubuntu", sans-serif;
+}
+
+body {
+  background-color: #fff;
+}
+
+.loginArea {
+  max-width: 100vw;
+  padding: 20px 50px;
+  background: linear-gradient(to top, #555, #000);
+  box-shadow: 0 0 8px #000;
+  color: var(--fontColor);
+  justify-content: center;
+  font-size: 1.5rem;
+  display: flex;
+  z-index: 2;
+}
+
+.btn {
+  all: unset;
+  padding: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1rem;
+  color: #fff;
+  transition: all 200ms ease;
+  user-select: none;
+}
+
+.LogInBtn {
+  background: green;
+  border: 1px solid rgb(16, 153, 16);
+  margin-left: auto;
+}
+
+.LogOutBtn {
+  background: rgb(187, 8, 8);
+  border: 1px solid rgb(212, 29, 29);
+  margin-left: auto;
+}
+
+.btn:hover {
+  filter: brightness(1.4);
+}
+
+header {
+  height: 200px;
+  width: 100vw;
+  background-color: #ccc;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  width: 40vw;
+  min-height: 100px;
+  padding: 10px;
+  margin: 20px auto;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+.head ul li {
+  all: unset;
+  display: inline-block;
+  font-size: 1.2rem;
+  border: 2px solid #eee;
+  padding: 5px 15px;
+  list-style-type: none;
+  border-radius: 5px 5px 0 0;
+  cursor: pointer;
+  color: #555;
+  margin-left: 2px;
+  margin-bottom: -2px;
+  user-select: none;
+}
+
+.head ul li.active {
+  background-color: #eee;
+}
+
+.content {
+  height: auto;
+  min-height: 100px;
+  width: auto;
+  background-color: #eee;
+  display: flex;
+  flex-flow: column;
+  padding-bottom: 20px;
+  transition: all 500ms ease-in;
+}
+
+.content .item {
+  width: 90%;
+  padding: 10px 20px;
+  background-color: #fff;
+  margin: 20px auto 0;
+  display: flex;
+  border: 2px solid #aaa;
+  justify-content: center;
+  border-radius: 5px;
+}
+
+.item span {
+  padding: 5px;
+}
+
+.btnStart {
+  background-color: rgb(49, 49, 255);
+  margin-left: auto;
+}
+
+.btnDelete {
+  background-color: rgb(184, 14, 14);
+  margin-left: 10px;
+}
+
+.btnDone {
+  background-color: rgb(11, 171, 11);
+  margin-left: auto;
+}
+
+.btnReturn {
+  background-color: rgb(18, 192, 218);
+  margin-left: auto;
+}
+
+.inputArea {
+  margin-top: 20px;
+  display: flex;
+  font-size: 1.5rem;
+}
+
+.btnAdd {
+  background-color: #090;
+  border-radius: 0 8px 8px 0;
+  font-size: 1.2rem;
+}
+
+.inText {
+  all: unset;
+  padding: 5px 10px;
+  border-radius: 8px 0 0 8px;
+  font-size: 1.2rem;
+  background-color: #eee;
+  transition: filter 300ms ease;
+}
+.inText:focus {
+  filter: brightness(1.5);
+}
+
+.emMassage {
+  text-align: center;
+  margin-top: 30px;
+}
