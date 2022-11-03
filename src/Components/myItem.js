@@ -10,7 +10,7 @@ function MyItem(props) {
       <span>{item.text}</span>
       {tab === "start" ? (
         <button
-          className="btn btnStart"
+          className="btn btnStart btnLeft"
           onClick={() =>
             despatch({ payload: { type: "startItem", key: item.key } })
           }
@@ -20,7 +20,7 @@ function MyItem(props) {
       ) : null}
       {tab === "progress" ? (
         <button
-          className="btn btnDone"
+          className="btn btnDone btnLeft"
           onClick={() =>
             despatch({ payload: { type: "doneItem", key: item.key } })
           }
@@ -30,7 +30,7 @@ function MyItem(props) {
       ) : null}
       {tab === "done" ? (
         <button
-          className="btn btnReturn"
+          className="btn btnReturn btnLeft"
           onClick={() =>
             despatch({ payload: { type: "startItem", key: item.key } })
           }

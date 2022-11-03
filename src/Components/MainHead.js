@@ -1,32 +1,48 @@
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import todoContext from "../Contexts/AppContext";
 import MyItem from "./myItem";
 /* variable */
 let Item;
+let listItm,
+  proItem = 0;
 
 function HeadMain() {
   let myCont = useContext(todoContext);
 
+  /* when page get LogeIn must start list get class active */
+  useEffect(() => {
+    getTab("start");
+  }, []);
+
+  /* Get List Item */
+  listItm = myCont.state.items.filter(
+    (item) => !item.delete && !item.done && !item.start
+  );
+
+  /* Get Item in Progress */
+  proItem = myCont.state.items.filter(
+    (item) => !item.delete && !item.done && item.start
+  );
+
+  /* Send Items to show from Different Tabs */
   switch (myCont.state.pos) {
     case "progress":
-      Item = myCont.state.items.filter(
-        (item) => !item.delete && !item.done && item.start
-      );
+      Item = proItem;
       break;
     case "done":
       Item = myCont.state.items.filter((item) => !item.delete && item.done);
       break;
     default:
-      Item = myCont.state.items.filter(
-        (item) => !item.delete && !item.done && !item.start
-      );
+      Item = listItm;
       break;
   }
 
+  /* Send Data to MyItem and return an Object ready to show */
   let showMyItem = Item.map((item) => {
     return <MyItem item={item} tab={myCont.state.pos} />;
   });
 
+  /* get the Tab */
   let getTab = (item) => {
     document.querySelector(".active").classList.remove("active");
     document.querySelector(`.${item}`).classList.add("active");
@@ -39,9 +55,15 @@ function HeadMain() {
         <ul>
           <li onClick={() => getTab("start")} className="start active">
             List
+            {listItm.length > 0 ? (
+              <span className="countSpn">{listItm.length}</span>
+            ) : null}
           </li>
           <li className="progress" onClick={() => getTab("progress")}>
             Im Gang
+            {proItem.length > 0 ? (
+              <span className="countSpn">{proItem.length}</span>
+            ) : null}
           </li>
           <li className="done" onClick={() => getTab("done")}>
             Erledigt
@@ -50,7 +72,7 @@ function HeadMain() {
       </div>
       <div className="content">
         {showMyItem.length <= 0 ? (
-          <span className="emMassage">Keine Plan zu Zeigen</span>
+          <span className="emMassage">Kein Plan in der Gegend zu zeigen</span>
         ) : (
           showMyItem
         )}
