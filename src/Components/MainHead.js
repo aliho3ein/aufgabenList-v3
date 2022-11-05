@@ -16,12 +16,12 @@ function HeadMain() {
 
   /* Get List Item */
   listItm = myCont.state.items.filter(
-    (item) => !item.delete && !item.done && !item.start
+    (item) => !item.delete && !item.done && !item.process
   );
 
   /* Get Item in Progress */
   proItem = myCont.state.items.filter(
-    (item) => !item.delete && !item.done && item.start
+    (item) => !item.delete && !item.done && item.process
   );
 
   /* Send Items to show from Different Tabs */
@@ -38,8 +38,8 @@ function HeadMain() {
   }
 
   /* Send Data to MyItem and return an Object ready to show */
-  let showMyItem = Item.map((item) => {
-    return <MyItem item={item} tab={myCont.state.pos} />;
+  let showMyItem = Item.map((item, index) => {
+    return <MyItem key={index} item={item} tab={myCont.state.pos} />;
   });
 
   /* get the Tab */
