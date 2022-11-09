@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import todoContext from "../Contexts/AppContext";
 import instance from "./../Api/todoApi";
 
@@ -7,6 +7,14 @@ function TodoHeader() {
   let getCon = useContext(todoContext);
 
   /* Create todo */
+  /*const [nAme, setnAme] = useState(getCon.state.userName);
+   useEffect(() => {
+    setnAme(() => {
+      return getCon.state.userName;
+    });
+  }, [getCon.state.auth]);
+  console.log("out of getData : " + nAme);*/
+
   let getNewData = () => {
     let title = document.querySelector(".inText");
     if (title.value.length >= 3) {
@@ -16,23 +24,25 @@ function TodoHeader() {
         process: false,
         delete: false,
       };
+      /*console.log("inside of getData : " + nAme);*/
 
       /* Ajax */
       instance
-        .post("/MyList.json", thisItem)
+        .post(`/MyList/${getCon.state.userName}.json`, thisItem)
         .then((response) => {
           getCon.despatch({
+            type: "create_item",
             payload: {
-              type: "Create",
               newItem: { ...thisItem, key: response.data.name },
             },
           });
         })
-        .catch((err) => console.log("Error"));
+        .catch((err) => console.log("Error create Data"));
 
       title.value = "";
     }
   };
+
   /* Enter Key */
   window.addEventListener("keydown", (key) => {
     if (key.code === "Enter") getNewData();
@@ -43,7 +53,7 @@ function TodoHeader() {
       <span>Geben Sie Ihre Plan an </span>
       <div className="inputArea">
         <input type="text" className="inText" />
-        <button className="btn btnAdd" onClick={getNewData}>
+        <button className="btn btnAdd" onClick={() => getNewData()}>
           hinzufügen
         </button>
       </div>

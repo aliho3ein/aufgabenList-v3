@@ -1,68 +1,42 @@
 import React, { useContext } from "react";
 import todoContext from "../Contexts/AppContext";
 import instance from "./../Api/todoApi";
-
-/* Shows Items - every Item has two bottom */
+import { Link } from "react-router-dom";
+/* Shows Items */
 function MyItem(props) {
-  let { despatch } = useContext(todoContext);
+  let { despatch, state } = useContext(todoContext);
   let { item, tab } = props;
 
-  /* let letStart = (type, act) => {
-    instance.put(
-      `/MyList/${item.key}.json`,
-      { ...item, ${act}: true }
-    );
-
-    despatch({ payload: { type: type, key: item.key } });
-  };*/
-
-  let letStart = () => {
-    let newItem = {
-      done: item.done,
-      delete: item.delete,
-      text: item.text,
-      process: true,
-    };
-
+  /* Löschen , Start or Erledigt */
+  let doItem = (value) => {
+    switch (value) {
+      case "start":
+        item.done = false;
+        item.process = true;
+        break;
+      case "done":
+        item.done = true;
+        break;
+      default:
+        item.delete = true;
+        instance
+          .delete(`/MyList/${state.userName}/${item.key}.json`)
+          .then((response) => {
+            despatch({
+              type: "doItem",
+              payload: { key: item.key, act: value },
+            });
+          })
+          .catch((err) => console.log("Error on load list"));
+        return;
+    }
     instance
-      .put(`/MyList/${item.key}.json`, newItem)
+      .put(`/MyList/${state.userName}/${item.key}.json`, item)
       .then((response) => {
-        despatch({ payload: { type: "startItem", key: item.key } });
-      })
-      .catch((err) => {
-        console.warn("Error");
-      });
-  };
-
-  let letDone = () => {
-    let newItem = {
-      done: true,
-      delete: item.delete,
-      text: item.text,
-      process: item.process,
-    };
-
-    instance
-      .put(`/MyList/${item.key}.json`, newItem)
-      .then((response) => {
-        despatch({ payload: { type: "doneItem", key: item.key } });
-      })
-      .catch((err) => {
-        console.warn("Error");
-      });
-  };
-
-  let letDel = () => {
-    let newItem = {
-      done: item.done,
-      delete: true,
-      text: item.text,
-      process: item.process,
-    };
-    instance
-      .put(`/MyList/${item.key}.json`, newItem)
-      .then((response) => {
-        despatch({ payload: { type: "deleteItem", key: item.key } });
+        despatch({
+          type: "doItem",
+          payload: { key: item.key, act: value },
+        });
       })
       .catch((err) => {
         console.warn("Error");
@@ -70,36 +44,33 @@ function MyItem(props) {
   };
 
   return (
-    <div key={item.key} className="item">
-      <span>{item.text}</span>
+    <div className="item">
+      <span>
+        <Link to={`/${item.key}`}> {item.text}</Link>
+      </span>
+
       {tab === "start" ? (
         <button
           className="btn btnStart btnLeft"
-          onClick={() => letStart("startItem", "process")}
+          onClick={() => doItem("start")}
         >
           Start
         </button>
       ) : null}
       {tab === "progress" ? (
-        <button
-          className="btn btnDone btnLeft"
-          onClick={() => letDone("doneItem", "done")}
-        >
+        <button className="btn btnDone btnLeft" onClick={() => doItem("done")}>
           Erledigt
         </button>
       ) : null}
       {tab === "done" ? (
         <button
           className="btn btnReturn btnLeft"
-          onClick={() => letStart("startItem", "start")}
+          onClick={() => doItem("start")}
         >
           zurück
         </button>
       ) : null}
-      <button
-        className="btn btnDelete"
-        onClick={() => letDel("deleteItem", "delete")}
-      >
+      <button className="btn btnDelete" onClick={() => doItem("delete")}>
         Löschen
       </button>
     </div>

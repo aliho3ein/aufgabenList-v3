@@ -1,15 +1,19 @@
-# AufgabenList Version 3
+# AufgabenList Version 4
 
-füge deine Pläne hin um die nicht zu vergessen 1
+- erstelle ein Konto
+- füge deine Pläne hin
+- viel Spaß :)
 
-## erstellt mit
+## Code enthält
 
-- Html/Css
-- JavaScript - React.js
-  - Function Component
+- Html/Css - (Style-v4)
+- JavaScript - React
+  - Function Component (v2)
   - Context
   - Reducer
-- Http Request
+  - Router (v2)
+- Http Request (v3)
+- User Account (v4)
 
-this FrontEnd mini Project
+FrontEnd mini Project
 [Live](https://aliho3ein.github.io/aufgabenList-v2/) Version

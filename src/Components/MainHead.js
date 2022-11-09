@@ -30,10 +30,12 @@ function HeadMain() {
       Item = proItem;
       break;
     case "done":
-      Item = myCont.state.items.filter((item) => !item.delete && item.done);
+      Item = myCont.state.items
+        .filter((item) => !item.delete && item.done)
+        .reverse();
       break;
     default:
-      Item = listItm;
+      Item = listItm.reverse();
       break;
   }
 
@@ -46,7 +48,7 @@ function HeadMain() {
   let getTab = (item) => {
     document.querySelector(".active").classList.remove("active");
     document.querySelector(`.${item}`).classList.add("active");
-    myCont.despatch({ payload: { type: "changeTab", tab: item } });
+    myCont.despatch({ type: "changeTab", payload: { tab: item } });
   };
 
   return (

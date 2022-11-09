@@ -1,0 +1,85 @@
+.logMain {
+  height: 320px;
+  aspect-ratio: 1;
+  background: rgb(0 0 0 /0.4);
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0px 0px 20px #717171;
+}
+
+.logAre,
+.sigAre {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.sigAre {
+  display: none;
+}
+
+.usInput {
+  all: unset;
+  height: 20px;
+  width: 60%;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: #eee;
+}
+
+.usInput:focus {
+  background-color: #fff;
+}
+
+.lBtn {
+  all: unset;
+  padding: 5px 10px;
+  background-color: #c6c61f;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 200ms ease;
+  user-select: none;
+}
+
+.lBtn:hover {
+  filter: brightness(1.5);
+}
+
+.LogInUser {
+  all: unset;
+  margin-left: auto;
+}
+
+.toggleUs {
+  color: #eee;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.sigBtn {
+  margin-left: -100px;
+}
+
+#funBtnMassage {
+  padding: 15px;
+  min-width: 120%;
+  background-color: #fde63a;
+  position: absolute;
+  top: -65px;
+  font-size: 0.9rem;
+  color: #000;
+  text-align: center;
+  display: none;
+  border-radius: 10px;
+}
