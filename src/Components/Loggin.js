@@ -6,6 +6,8 @@ import { useLocation, NavLink, Link, useNavigate } from "react-router-dom";
 function TodoLogin() {
   let userOn = useContext(AuthenticContext);
 
+  /* console.log(userOn.state.auth);*/
+
   const location = useLocation();
   const Nav = useNavigate();
 
@@ -17,7 +19,9 @@ function TodoLogin() {
             <NavLink to="/">Home</NavLink>
           </li>
           <li>
-            <NavLink to="/list">My Todo List</NavLink>
+            <NavLink to={userOn.state.auth ? "/list" : "/logIn"}>
+              My Todo List
+            </NavLink>
           </li>
           <li>
             <NavLink
@@ -48,17 +52,16 @@ function TodoLogin() {
           }
         </Link>
       ) : (
-        <Link to="/" className="LogInUser">
-          <button
-            className="btn LogOutBtn"
-            onClick={() => {
-              window.location.reload(false);
-              /*userOn.despatch({ type: "toggleUser", payload: { key: "" } });*/
-            }}
-          >
-            LogOut
-          </button>
-        </Link>
+        <button
+          className="btn LogOutBtn"
+          onClick={() => {
+            Nav("/");
+            window.location.reload(false);
+            /*userOn.despatch({ type: "toggleUser", payload: { key: "" } });*/
+          }}
+        >
+          LogOut
+        </button>
       )}
     </div>
   );

@@ -8,10 +8,32 @@
     <link rel="stylesheet" href="src/Styles/LogIn.css" />
   </head>
   <body>
-    <div class="logMain">
-      <input type="text" placeholder="Username" class="userName" />
-      <input type="password" placeholder="Password" class="passWord" />
-      <button class="LogBtn">Log In</button>
-    </div>
+    <form action="">
+      <h1>Tell us more</h1>
+      <label for="firstName">First Name</label>
+      <input type="text" name="" id="firstName" placeholder="First Name" />
+
+      <label for="lastName">Last Name</label>
+      <input type="text" name="" id="lastName" placeholder="Last Name" />
+
+      <label for="Email">Your Email</label>
+      <input
+        type="email"
+        name=""
+        id="Email"
+        placeholder="Tell us how to contact you"
+      />
+
+      <label for="about">Tell us about yourself</label>
+      <textarea id="about" cols="30" rows="10"></textarea>
+
+      <div class="checkArea">
+        <label for="check" class="tCheck">Want to know more ?</label>
+        <div class="checkBox">
+          <input type="checkbox" id="check" onchange="change()" />
+        </div>
+      </div>
+      <input type="submit" disabled value="Submit" />
+    </form>
   </body>
 </html>

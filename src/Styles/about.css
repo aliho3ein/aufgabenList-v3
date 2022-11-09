@@ -6,3 +6,27 @@
   align-items: center;
   color: red;
 }
+
+.aboutContainer {
+  /* height: 80vh; */
+  width: 80vw;
+  color: #fff;
+  background: rgb(0 0 0 / 0.5);
+  backdrop-filter: blur(10px);
+  margin: 150px auto;
+  box-sizing: border-box;
+  padding: 50px;
+  box-shadow: 0 0 15px gray;
+  user-select: none;
+}
+
+.sameStyle > span {
+  font-size: 1.6rem;
+  line-height: 2rem;
+}
+
+.sameStyle p {
+  font-size: 1.1rem;
+  line-height: 1.6rem;
+  padding: 10px 20px;
+}

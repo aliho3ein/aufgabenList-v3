@@ -1,0 +1,103 @@
+.contactArea {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  --myColor: rgb(222, 189, 43);
+}
+
+h1 {
+  text-align: center;
+}
+
+form.contAre {
+  min-height: 750px;
+  height: auto;
+  min-width: 350px;
+  width: 45%;
+  background: rgb(255 255 255 / 0.6);
+  backdrop-filter: blur(10px);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+label {
+  font-size: 1.3rem;
+  user-select: none;
+}
+
+input.contAre,
+textarea {
+  padding: 10px;
+  margin: 8px 0 20px;
+  resize: none;
+  width: 100%;
+  border: 1px solid #ddd;
+  background-color: #eee;
+}
+
+input.contAre:focus,
+textarea:focus {
+  outline: 1px solid var(--myColor);
+  border-radius: 2px;
+  background-color: #fff;
+}
+
+label[for="check"] {
+  cursor: pointer;
+}
+
+.checkBox {
+  display: flex;
+  border: 3px solid #ccc;
+  background: #999;
+  height: 22px;
+  width: 40px;
+  border-radius: 20px;
+  margin-left: 10px;
+  align-items: center;
+}
+
+#check {
+  all: unset;
+  background: #fff;
+  height: 99%;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  transition: all 200ms ease;
+  margin-left: 0px;
+  cursor: pointer;
+}
+
+#check:checked {
+  margin-left: 18px;
+}
+
+.checkArea {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+}
+
+input[type="submit"] {
+  all: unset;
+  width: 50%;
+  max-width: 200px;
+  text-align: center;
+  padding: 10px;
+  border: 2px solid gray;
+  align-self: center;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: all 200ms ease;
+  user-select: none;
+}
+
+input[type="submit"]:hover {
+  background: var(--myColor);
+  color: #fff;
+}

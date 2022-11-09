@@ -92,7 +92,6 @@ main {
   border-radius: 5px;
   backdrop-filter: blur(10px);
   box-shadow: 20px 20px 60px #bebebe;
-  text-align: center;
 }
 
 .head ul li {
