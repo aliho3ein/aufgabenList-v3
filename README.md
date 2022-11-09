@@ -12,7 +12,7 @@
   - Context
   - Reducer
   - Router (v2)
-- Http Request (v3)
+- Http Request - axios , Firebase(v3)
 - User Account (v4)
 
 FrontEnd mini Project
