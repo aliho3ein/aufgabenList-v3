@@ -104,8 +104,8 @@ function Uslogin() {
   /* Going to List Page */
   let goLogIn = (user, usName) => {
     cont.despatch({ type: "toggleUser", payload: { key: user } });
-    Nav(`/list?${usName}`);
     cont.state.userName = user;
+    Nav(`/list?${usName}`);
   };
 
   /* Keyboard Enter */
@@ -268,8 +268,6 @@ function getPassLength() {
     massage.style.display = "none";
   }
 }
-
-/*  transform: translateX(); */
 
 /* */
 function inSelect(e) {
