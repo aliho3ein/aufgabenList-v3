@@ -50,29 +50,63 @@ function MyItem(props) {
       </span>
 
       {tab === "start" ? (
-        <button
+        <lord-icon
+          src="https://cdn.lordicon.com/wnkegycl.json"
+          trigger="loop"
+          delay="1000"
+          class="lord-ic"
+          title="Start"
+          onClick={() => doItem("start")}
+        ></lord-icon>
+      ) : /* <button
           className="btn btnStart btnLeft"
           onClick={() => doItem("start")}
         >
           Start
-        </button>
-      ) : null}
+        </button>*/
+      null}
       {tab === "progress" ? (
-        <button className="btn btnDone btnLeft" onClick={() => doItem("done")}>
+        <lord-icon
+          src="https://cdn.lordicon.com/hrqwmuhr.json"
+          trigger="loop"
+          delay="1000"
+          class="lord-ic lord-don"
+          title="Erledigt"
+          onClick={() => doItem("done")}
+        ></lord-icon>
+      ) : /* <button className="btn btnDone btnLeft" onClick={() => doItem("done")}>
           Erledigt
-        </button>
-      ) : null}
+        </button>*/
+      null}
       {tab === "done" ? (
-        <button
+        <lord-icon
+          src="https://cdn.lordicon.com/krmfspeu.json"
+          trigger="hover"
+          class="lord-ic"
+          title="zurück im gang"
+          onClick={() => doItem("start")}
+        ></lord-icon>
+      ) : /*  <button
           className="btn btnReturn btnLeft"
           onClick={() => doItem("start")}
         >
           zurück
-        </button>
-      ) : null}
-      <button className="btn btnDelete" onClick={() => doItem("delete")}>
-        Löschen
-      </button>
+        </button>*/
+      null}
+      {/* <button className="btn btnDelete" onClick={() => doItem("delete")}>
+        <lord-icon
+          src="https://cdn.lordicon.com/gsqxdxog.json"
+          trigger="hover"
+          className="lord-Ic"
+        ></lord-icon>
+      </button>*/}
+      <lord-icon
+        src="https://cdn.lordicon.com/gsqxdxog.json"
+        trigger="hover"
+        class="lord-ic lord-del"
+        title="Löschen"
+        onClick={() => doItem("delete")}
+      ></lord-icon>
     </div>
   );
 }
