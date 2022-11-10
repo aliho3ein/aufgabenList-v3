@@ -57,6 +57,24 @@ body {
   border-radius: 8px 0 0 8px;
 }
 
+.lord-ic {
+  user-select: none;
+  cursor: pointer;
+  padding-left: 10px;
+  margin-left: auto;
+  width: 35px;
+  height: 35px;
+}
+
+.lord-del {
+  border-left: 1px solid gray;
+  margin-left: 25px;
+}
+
+.lord-don {
+  transform: scale(1.3) translate(20px, 0px) rotate(180deg);
+}
+
 .LogInBtn {
   background: var(--green);
   border: 1px solid rgb(16, 153, 16);
@@ -155,12 +173,12 @@ main {
 }
 
 .btnReturn {
-  background-color: var(--orange);
+  /* background-color: var(--orange); */
   margin-left: auto;
 }
 
 .btnDelete {
-  background-color: var(--red);
+  /* background-color: var(--red); */
   /*margin-left: 10px;*/
   border-radius: 0 8px 8px 0;
 }
@@ -305,3 +323,38 @@ a:not(.LogInUser) {
     transform: rotate(360deg);
   }
 }
+
+/* welcome Massage */
+
+.welcomeMas {
+  padding: 20px;
+  width: 120px;
+  background-color: rgba(226, 174, 126, 0.7);
+  border-radius: 60px 60px 60px 0;
+  position: fixed;
+  bottom: -80px;
+  left: -80px;
+  transform: rotate(-8deg);
+  box-shadow: 0 0 15px rgb(197, 152, 112);
+  text-align: center;
+  backdrop-filter: blur(10px);
+}
+
+.showMas {
+  bottom: 40px;
+  left: 30px;
+  transition: all 2s cubic-bezier(0.09, 1.13, 0.17, 0.67);
+}
+
+/* .welcomeMas:after {
+  content: "";
+  height: 0;
+  width: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 20px solid rgb(255 255 25 / 0.7);
+  position: absolute;
+  top: 47px;
+  left: -12px;
+  transform: rotate(-45deg);
+} */

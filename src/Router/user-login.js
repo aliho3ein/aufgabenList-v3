@@ -26,7 +26,6 @@ function Uslogin() {
           (item) => item.username === user && item.password === pass
         );
         if (check) {
-          console.log(check.name);
           goLogIn(check.username, check.name);
         } else {
           massage.textContent = "Benutzername Oder kennwort ist Falsch";
@@ -103,9 +102,9 @@ function Uslogin() {
 
   /* Going to List Page */
   let goLogIn = (user, usName) => {
-    cont.despatch({ type: "toggleUser", payload: { key: user } });
-    Nav(`/list?${usName}`);
+    cont.despatch({ type: "toggleUser", payload: { key: user, name: usName } });
     cont.state.userName = user;
+    Nav(`/list?${usName}`);
   };
 
   /* Keyboard Enter */
@@ -268,8 +267,6 @@ function getPassLength() {
     massage.style.display = "none";
   }
 }
-
-/*  transform: translateX(); */
 
 /* */
 function inSelect(e) {
