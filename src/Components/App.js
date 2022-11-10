@@ -1,8 +1,11 @@
-import { useReducer, useEffect, useState, lazy, Suspense } from "react";
+import { useReducer, useState, lazy, Suspense } from "react";
 /* Style */
 import "./../Styles/background.css";
 import "./../Styles/main.css";
 import "./../Styles/LogIn.css";
+import lottie from "lottie-web";
+import { defineElement } from "lord-icon-element";
+
 /* Context */
 import todoContext from "./../Contexts/AppContext";
 import AuthenticContext from "./../Contexts/AuthContext";
@@ -29,6 +32,7 @@ const AboutMe = lazy(() => import("../Router/about"));
 const TodoLogin = lazy(() => import("./Loggin"));
 const Uslogin = lazy(() => import("../Router/user-login"));
 
+defineElement(lottie.loadAnimation);
 /* App */
 function App() {
   const [state, despatch] = useReducer(todoReducer, {
@@ -36,6 +40,7 @@ function App() {
     pos: "start",
     auth: false,
     userName: "",
+    name: "",
   });
 
   /* Loading Effect */
@@ -107,6 +112,15 @@ function App() {
             }
           />
         </Routes>
+        <div className={state.name ? "welcomeMas showMas" : "welcomeMas"}>
+          <span className="msgStart">Hi , {state.name} </span>
+          <lord-icon
+            src="https://cdn.lordicon.com/pithnlch.json"
+            trigger="loop"
+            delay="2000"
+            class="lord-smile"
+          ></lord-icon>
+        </div>
       </todoContext.Provider>
     </AuthenticContext.Provider>
   );

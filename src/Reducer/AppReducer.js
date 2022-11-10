@@ -1,6 +1,6 @@
 function todoReducer(state, action) {
   let { type } = action;
-  let { key, tab, newItem, act } = action.payload;
+  let { key, tab, newItem, act, name } = action.payload;
 
   switch (type) {
     case "init_data":
@@ -20,7 +20,7 @@ function todoReducer(state, action) {
       return { ...state };
 
     case "toggleUser":
-      return { ...state, auth: !state.auth, userName: key };
+      return { ...state, auth: !state.auth, userName: key, name };
 
     default:
       return { ...state, pos: tab };
