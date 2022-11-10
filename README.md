@@ -16,4 +16,4 @@
 - User Account (v4)
 
 FrontEnd mini Project
-[Live](https://aliho3ein.github.io/aufgabenList-v2/) Version
+[Live](https://main--aufgaben-list.netlify.app/) Version
