@@ -1,0 +1,35 @@
+{
+  "files": {
+    "main.css": "/aufgabenList-v3/static/css/main.69f9d213.css",
+    "main.js": "/aufgabenList-v3/static/js/main.3157c9b3.js",
+    "static/css/0.a7eebfce.chunk.css": "/aufgabenList-v3/static/css/0.a7eebfce.chunk.css",
+    "static/js/0.5917e436.chunk.js": "/aufgabenList-v3/static/js/0.5917e436.chunk.js",
+    "static/css/536.a7eebfce.chunk.css": "/aufgabenList-v3/static/css/536.a7eebfce.chunk.css",
+    "static/js/536.76cc4e5f.chunk.js": "/aufgabenList-v3/static/js/536.76cc4e5f.chunk.js",
+    "static/css/702.26dd075b.chunk.css": "/aufgabenList-v3/static/css/702.26dd075b.chunk.css",
+    "static/js/702.a85510c7.chunk.js": "/aufgabenList-v3/static/js/702.a85510c7.chunk.js",
+    "static/css/368.a7eebfce.chunk.css": "/aufgabenList-v3/static/css/368.a7eebfce.chunk.css",
+    "static/js/368.ba2240e4.chunk.js": "/aufgabenList-v3/static/js/368.ba2240e4.chunk.js",
+    "static/js/135.80b6a5eb.chunk.js": "/aufgabenList-v3/static/js/135.80b6a5eb.chunk.js",
+    "static/js/188.e6af30a8.chunk.js": "/aufgabenList-v3/static/js/188.e6af30a8.chunk.js",
+    "static/js/787.0845e65f.chunk.js": "/aufgabenList-v3/static/js/787.0845e65f.chunk.js",
+    "index.html": "/aufgabenList-v3/index.html",
+    "main.69f9d213.css.map": "/aufgabenList-v3/static/css/main.69f9d213.css.map",
+    "main.3157c9b3.js.map": "/aufgabenList-v3/static/js/main.3157c9b3.js.map",
+    "0.a7eebfce.chunk.css.map": "/aufgabenList-v3/static/css/0.a7eebfce.chunk.css.map",
+    "0.5917e436.chunk.js.map": "/aufgabenList-v3/static/js/0.5917e436.chunk.js.map",
+    "536.a7eebfce.chunk.css.map": "/aufgabenList-v3/static/css/536.a7eebfce.chunk.css.map",
+    "536.76cc4e5f.chunk.js.map": "/aufgabenList-v3/static/js/536.76cc4e5f.chunk.js.map",
+    "702.26dd075b.chunk.css.map": "/aufgabenList-v3/static/css/702.26dd075b.chunk.css.map",
+    "702.a85510c7.chunk.js.map": "/aufgabenList-v3/static/js/702.a85510c7.chunk.js.map",
+    "368.a7eebfce.chunk.css.map": "/aufgabenList-v3/static/css/368.a7eebfce.chunk.css.map",
+    "368.ba2240e4.chunk.js.map": "/aufgabenList-v3/static/js/368.ba2240e4.chunk.js.map",
+    "135.80b6a5eb.chunk.js.map": "/aufgabenList-v3/static/js/135.80b6a5eb.chunk.js.map",
+    "188.e6af30a8.chunk.js.map": "/aufgabenList-v3/static/js/188.e6af30a8.chunk.js.map",
+    "787.0845e65f.chunk.js.map": "/aufgabenList-v3/static/js/787.0845e65f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.69f9d213.css",
+    "static/js/main.3157c9b3.js"
+  ]
+}

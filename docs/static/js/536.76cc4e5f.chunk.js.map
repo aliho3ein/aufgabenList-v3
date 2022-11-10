@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/536.76cc4e5f.chunk.js","mappings":"2IAMA,UAJA,WACE,OAAO,gBAAKA,UAAU,YAAW,8BACnC,C","sources":["Router/home.js"],"sourcesContent":["import \"./../Styles/about.css\";\n\nfunction MyHome() {\n  return <div className=\"aboutMain\">This Is Home Page</div>;\n}\n\nexport default MyHome;\n"],"names":["className"],"sourceRoot":""}

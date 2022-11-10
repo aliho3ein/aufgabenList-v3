@@ -18,7 +18,7 @@ import MyHome from "./../Router/home";
 import SingleItem from "./../Router/singleItem";*/
 
 /* Router */
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, HashRouter, BrowserRouter } from "react-router-dom";
 
 /* Lazy */
 const SingleItem = lazy(() => import("./../Router/singleItem"));
@@ -50,65 +50,73 @@ function App() {
   }, [state.auth]);*/
 
   return (
-    <AuthenticContext.Provider value={{ state, user: state.auth, despatch }}>
-      <Suspense>
-        <TodoLogin />
-      </Suspense>
-      <todoContext.Provider value={{ state, despatch, load, setLoading }}>
-        <Routes>
-          <Route
-            path="/list"
-            element={
-              state.auth ? (
-                <MyList />
-              ) : (
-                <div className="aboutMain">Please LogIn to your Account</div>
-              )
-            }
-          />
-          <Route
-            path="/:id"
-            element={
-              <Suspense fallback={<h1>Loading...</h1>}>
-                <SingleItem />
-              </Suspense>
-            }
-          />
-          <Route
-            path="/"
-            element={
-              <Suspense>
-                <MyHome />
-              </Suspense>
-            }
-          />
-          <Route
-            path="/about"
-            element={
-              <Suspense>
-                <AboutMe />
-              </Suspense>
-            }
-          />
-          <Route
-            path="/logIn"
-            element={
-              <Suspense>
-                <Uslogin />
-              </Suspense>
-            }
-          />
-          <Route
-            path="/contact"
-            element={
-              <Suspense>
-                <ContactMe />
-              </Suspense>
-            }
-          />
-        </Routes>
-      </todoContext.Provider>
-    </AuthenticContext.Provider>
+    <BrowserRouter>
+      <HashRouter basename="/">
+        <AuthenticContext.Provider
+          value={{ state, user: state.auth, despatch }}
+        >
+          <Suspense>
+            <TodoLogin />
+          </Suspense>
+          <todoContext.Provider value={{ state, despatch, load, setLoading }}>
+            <Routes>
+              <Route
+                path="/list"
+                element={
+                  state.auth ? (
+                    <MyList />
+                  ) : (
+                    <div className="aboutMain">
+                      Please LogIn to your Account
+                    </div>
+                  )
+                }
+              />
+              <Route
+                path="/:id"
+                element={
+                  <Suspense fallback={<h1>Loading...</h1>}>
+                    <SingleItem />
+                  </Suspense>
+                }
+              />
+              <Route
+                path="/"
+                element={
+                  <Suspense>
+                    <MyHome />
+                  </Suspense>
+                }
+              />
+              <Route
+                path="/about"
+                element={
+                  <Suspense>
+                    <AboutMe />
+                  </Suspense>
+                }
+              />
+              <Route
+                path="/logIn"
+                element={
+                  <Suspense>
+                    <Uslogin />
+                  </Suspense>
+                }
+              />
+              <Route
+                path="/contact"
+                element={
+                  <Suspense>
+                    <ContactMe />
+                  </Suspense>
+                }
+              />
+            </Routes>
+          </todoContext.Provider>
+        </AuthenticContext.Provider>
+      </HashRouter>
+    </BrowserRouter>
   );
 }
 
