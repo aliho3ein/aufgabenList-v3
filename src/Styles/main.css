@@ -345,16 +345,3 @@ a:not(.LogInUser) {
   left: 30px;
   transition: all 2s cubic-bezier(0.09, 1.13, 0.17, 0.67);
 }
-
-/* .welcomeMas:after {
-  content: "";
-  height: 0;
-  width: 0;
-  border-left: 20px solid transparent;
-  border-right: 20px solid transparent;
-  border-bottom: 20px solid rgb(255 255 25 / 0.7);
-  position: absolute;
-  top: 47px;
-  left: -12px;
-  transform: rotate(-45deg);
-} */
