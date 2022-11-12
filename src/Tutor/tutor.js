@@ -5,7 +5,7 @@ import instance from "./../Api/todoApi";
 let Tutor = (props) => {
   let { tutor, desp } = props;
   let [result, setResult] = useState([]);
-
+  let self = 1;
   // document.cookie = "user=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
   let Us = document.cookie.split("=");
 
@@ -52,7 +52,7 @@ let Tutor = (props) => {
         lin: result.lin + title[10],
         ubu: result.ubu + title[11],
         new: result.new + title[12],
-        user: ++result.user,
+        user: result.user + self,
       };
 
       if (!Us[1]) {
@@ -82,7 +82,10 @@ let Tutor = (props) => {
     } catch {}
   };
 
-  if (Us[1]) setData();
+  if (Us[1]) {
+    setData();
+    self = 0;
+  }
 
   return (
     <div className="tutContainer">
