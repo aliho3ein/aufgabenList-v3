@@ -5,35 +5,64 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="src/Styles/LogIn.css" />
+    <link rel="stylesheet" href="src/Tutor/styleTutor.css" />
   </head>
   <body>
-    <form action="">
-      <h1>Tell us more</h1>
-      <label for="firstName">First Name</label>
-      <input type="text" name="" id="firstName" placeholder="First Name" />
-
-      <label for="lastName">Last Name</label>
-      <input type="text" name="" id="lastName" placeholder="Last Name" />
-
-      <label for="Email">Your Email</label>
-      <input
-        type="email"
-        name=""
-        id="Email"
-        placeholder="Tell us how to contact you"
-      />
-
-      <label for="about">Tell us about yourself</label>
-      <textarea id="about" cols="30" rows="10"></textarea>
-
-      <div class="checkArea">
-        <label for="check" class="tCheck">Want to know more ?</label>
-        <div class="checkBox">
-          <input type="checkbox" id="check" onchange="change()" />
-        </div>
-      </div>
-      <input type="submit" disabled value="Submit" />
-    </form>
+    <div class="aboutContainer">
+      <label for="svHl-tag"
+        >Html (head und body tags , element )
+        <input type="checkbox" name="" id="svHl-tag" />
+      </label>
+      <label for="svHl-table"
+        >Html Table (tHead , tr , td , th ... )
+        <input type="checkbox" name="" id="svHl-table"
+      /></label>
+      <label for="svCss-dis"
+        >CSS - Display (block , inline , inline-block , ... )<input
+          type="checkbox"
+          name=""
+          id="svCss-dis"
+      /></label>
+      <label for="svCss-pos"
+        >CSS - Position (Absolute , Relative , fixed , ...)<input
+          type="checkbox"
+          name=""
+          id="svCss-pos"
+      /></label>
+      <label for="svCss-sud"
+        >CSS - pseudo Class <input type="checkbox" name="" id="svCss-sud"
+      /></label>
+      <label for="svCss-bc"
+        >CSS - Background ( image , -gradient ... )
+        <input type="checkbox" name="" id="svCss-bc"
+      /></label>
+      <label for="svCss-fnt"
+        >Font (@import , -family , -size , -width ...)<input
+          type="checkbox"
+          name=""
+          id="svCss-fnt"
+      /></label>
+      <label for="svCss-shad"
+        >CSS - shadow (text , box)
+        <input type="checkbox" name="" id="svCss-shad"
+      /></label>
+      <label for="svCss-attr"
+        >CSS - Attribute selector
+        <input type="checkbox" name="" id="svCss-attr"
+      /></label>
+      <label for="svGit">
+        Git (Remote , Repository , Github)
+        <input type="checkbox" name="" id="svGit"
+      /></label>
+      <label for="svLinux"
+        >Linux (Terminal , sudo Command)
+        <input type="checkbox" name="" id="svLinux"
+      /></label>
+      <hr />
+      <label for="ubung"
+        >Live Coding (unterrichtsaufgaben)
+        <input type="checkbox" name="" id="ubung"
+      /></label>
+    </div>
   </body>
 </html>
