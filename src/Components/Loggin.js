@@ -37,6 +37,9 @@ function TodoLogin() {
           <li>
             <NavLink to={`/contact` + location.search}>Contact</NavLink>
           </li>
+          <li>
+            <NavLink to="/tutor">Umfrage</NavLink>
+          </li>
         </ul>
       </nav>
 
