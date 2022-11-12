@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import todoContext from "../Contexts/AppContext";
 import instance from "./../Api/todoApi";
 

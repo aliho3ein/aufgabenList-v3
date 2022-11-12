@@ -1,4 +1,10 @@
-import { useReducer, useState, lazy, Suspense } from "react";
+import { useReducer, useState, lazy, Suspense, useContext } from "react";
+
+/* =========================== Tutor Umfrage ==============================*/
+import Tutor from "../Tutor/tutor";
+import TutorContext from "./../Tutor/TutContext";
+import tutorReducer from "./../Tutor/TutReducer";
+
 /* Style */
 import "./../Styles/background.css";
 import "./../Styles/main.css";
@@ -53,6 +59,11 @@ function App() {
       return state.userName;
     });
   }, [state.auth]);*/
+  /*===================== Tutor Side =========================*/
+  const [myTutor, despatchTutor] = useReducer(tutorReducer, {
+    umfrage: [],
+    showResult: false,
+  });
 
   return (
     <AuthenticContext.Provider value={{ state, user: state.auth, despatch }}>
@@ -70,6 +81,10 @@ function App() {
                 <div className="aboutMain">Please LogIn to your Account</div>
               )
             }
+          />
+          <Route
+            path="/tutor"
+            element={<Tutor tutor={myTutor} desp={despatchTutor} />}
           />
           <Route
             path="/:id"

@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 /* context */
 import todoContext from "../Contexts/AppContext";
 /* compo */
