@@ -52,8 +52,7 @@ function MyItem(props) {
       {tab === "start" ? (
         <lord-icon
           src="https://cdn.lordicon.com/wnkegycl.json"
-          trigger="loop"
-          delay="1000"
+          trigger="hover"
           class="lord-ic"
           title="Start"
           onClick={() => doItem("start")}
@@ -68,8 +67,7 @@ function MyItem(props) {
       {tab === "progress" ? (
         <lord-icon
           src="https://cdn.lordicon.com/hrqwmuhr.json"
-          trigger="loop"
-          delay="1000"
+          trigger="hover"
           class="lord-ic lord-don"
           title="Erledigt"
           onClick={() => doItem("done")}
