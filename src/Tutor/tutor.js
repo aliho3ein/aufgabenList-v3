@@ -6,9 +6,17 @@ let Tutor = (props) => {
   let { tutor, desp } = props;
   let [result, setResult] = useState([]);
   let self = 1;
-  // document.cookie = "user=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+  /* Get Cookie */
+  document.cookie = "user=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
   let Us = document.cookie.split("=");
+  useEffect(() => {
+    if (Us[1]) {
+      setData();
+      self = 0;
+    }
+  }, []);
 
+  /* Show Result after submit */
   useEffect(() => {
     let erg = [];
     let ergebnis = Object.values(tutor.umfrage);
@@ -78,26 +86,23 @@ let Tutor = (props) => {
       }
 
       /* Cookie */
-      document.cookie = "user=true;SameSite=None; Secure";
+      document.cookie = "17=true;SameSite=None; Secure";
     } catch {}
   };
 
-  if (Us[1]) {
-    setData();
-    self = 0;
-  }
-
+  /* Return */
   return (
     <div className="tutContainer">
+      <h2>Was soll beim nächsten Tutor (17.04) wiederholt werden ?</h2>
       <label htmlFor="svHl-tag">
         <span>{result[0]}</span>
-        <input type="checkbox" className="svInput" id="svHl-tag" /> Html (head
-        und body tags , element )
+        <input type="checkbox" className="svInput" id="svHl-tag" /> Responsive
+        (min-width , max-width , media Query){" "}
       </label>
       <label htmlFor="svHl-table">
         <span>{result[1]}</span>
-        <input type="checkbox" className="svInput" id="svHl-table" /> Html Table
-        (tHead , tr , td , th ... )
+        <input type="checkbox" className="svInput" id="svHl-table" /> FlexBox
+        (flex , -flow , justify- , align- )
       </label>
       <label htmlFor="svCss-dis">
         <span>{result[2]}</span>
@@ -112,7 +117,7 @@ let Tutor = (props) => {
       <label htmlFor="svCss-sud">
         <span>{result[4]}</span>
         <input type="checkbox" className="svInput" id="svCss-sud" />
-        CSS - pseudo Class
+        CSS - pseudo Class (:after , :before)
       </label>
       <label htmlFor="svCss-bc">
         <span>{result[5]}</span>
@@ -122,7 +127,7 @@ let Tutor = (props) => {
       <label htmlFor="svCss-fnt">
         <span>{result[6]}</span>
         <input type="checkbox" className="svInput" id="svCss-fnt" />
-        Font (@import , -family , -size , -width ...)
+        Font (@import , -family , -size , -weight ...)
       </label>
       <label htmlFor="svCss-shad">
         <span>{result[7]}</span>
@@ -147,8 +152,11 @@ let Tutor = (props) => {
       <hr />
       <label htmlFor="ubung">
         <span>{result[11]}</span>
-        <input type="checkbox" className="svInput" id="ubung" /> Live Coding
-        (unterrichtsaufgaben)
+        <input type="checkbox" className="svInput" id="ubung" /> Live Coding -
+        aufgabe-61
+        <a id="aufgabe" href="https://ibb.co/zxqTm1J" target="_blank">
+          Link
+        </a>
       </label>
       <label htmlFor="newMeth">
         <span>{result[12]}</span>
@@ -166,7 +174,6 @@ let Tutor = (props) => {
             ></lord-icon>
             <span className="btnName">Einreichen </span>
           </button>
-          {/*jpikaoyw*/}
         </div>
       ) : (
         <h2>Vielen Danke , Die Umfrage wurde erfolgreich gesendet</h2>

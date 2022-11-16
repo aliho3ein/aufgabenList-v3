@@ -83,7 +83,7 @@ function App() {
             }
           />
           <Route
-            path="/tutor"
+            path="/"
             element={<Tutor tutor={myTutor} desp={despatchTutor} />}
           />
           <Route
@@ -95,7 +95,7 @@ function App() {
             }
           />
           <Route
-            path="/"
+            path="/home"
             element={
               <Suspense>
                 <MyHome />

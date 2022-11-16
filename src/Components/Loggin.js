@@ -16,7 +16,7 @@ function TodoLogin() {
       <nav className="Navigation">
         <ul>
           <li>
-            <NavLink to="/">Home</NavLink>
+            <NavLink to="/home">Home</NavLink>
           </li>
           <li>
             <NavLink to={userOn.state.auth ? "/list" : "/logIn"}>
@@ -38,7 +38,7 @@ function TodoLogin() {
             <NavLink to={`/contact` + location.search}>Contact</NavLink>
           </li>
           <li>
-            <NavLink to="/tutor">Umfrage</NavLink>
+            <NavLink to="/">Umfrage</NavLink>
           </li>
         </ul>
       </nav>
@@ -58,7 +58,7 @@ function TodoLogin() {
         <button
           className="btn LogOutBtn"
           onClick={() => {
-            Nav("/");
+            Nav("/home");
             window.location.reload(false);
             /*userOn.despatch({ type: "toggleUser", payload: { key: "" } });*/
           }}
