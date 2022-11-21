@@ -7,7 +7,9 @@ let Tutor = (props) => {
   let [result, setResult] = useState([]);
   let self = 1;
   /* Get Cookie */
+  document.cookie = "17=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
   document.cookie = "user=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+
   let Us = document.cookie.split("=");
   useEffect(() => {
     if (Us[1]) {
@@ -86,14 +88,14 @@ let Tutor = (props) => {
       }
 
       /* Cookie */
-      document.cookie = "17=true;SameSite=None; Secure";
+      document.cookie = "22=true;SameSite=None; Secure";
     } catch {}
   };
 
   /* Return */
   return (
     <div className="tutContainer">
-      <h2>Was soll beim nächsten Tutor (17.04) wiederholt werden ?</h2>
+      <h2>Was soll beim nächsten Tutor (22.11) wiederholt werden ?</h2>
       <label htmlFor="svHl-tag">
         <span>{result[0]}</span>
         <input type="checkbox" className="svInput" id="svHl-tag" /> Responsive
@@ -119,16 +121,12 @@ let Tutor = (props) => {
         <input type="checkbox" className="svInput" id="svCss-sud" />
         CSS - pseudo Class (:after , :before)
       </label>
-      <label htmlFor="svCss-bc">
+      <label htmlFor="svCss-bc" className="disNone">
         <span>{result[5]}</span>
         <input type="checkbox" className="svInput" id="svCss-bc" /> CSS -
         Background ( image , -gradient ... )
       </label>
-      <label htmlFor="svCss-fnt">
-        <span>{result[6]}</span>
-        <input type="checkbox" className="svInput" id="svCss-fnt" />
-        Font (@import , -family , -size , -weight ...)
-      </label>
+
       <label htmlFor="svCss-shad">
         <span>{result[7]}</span>
         <input type="checkbox" className="svInput" id="svCss-shad" /> CSS -
@@ -144,7 +142,7 @@ let Tutor = (props) => {
         <input type="checkbox" className="svInput" id="svGit" /> Git (Remote ,
         Repository , Github)
       </label>
-      <label htmlFor="svLinux">
+      <label htmlFor="svLinux" className="disNone">
         <span>{result[10]}</span>
         <input type="checkbox" className="svInput" id="svLinux" />
         Linux (Terminal , sudo Command)
@@ -152,9 +150,22 @@ let Tutor = (props) => {
       <hr />
       <label htmlFor="ubung">
         <span>{result[11]}</span>
-        <input type="checkbox" className="svInput" id="ubung" /> Live Coding -
-        aufgabe-61
-        <a id="aufgabe" href="https://ibb.co/zxqTm1J" target="_blank">
+        <input type="checkbox" className="svInput" id="ubung" />
+        aufgabe-64 (Responsive Ohne MediaQuery)
+        <a id="aufgabe" href="https://ibb.co/xshbb5t" target="_blank">
+          Link
+        </a>
+      </label>
+      <label htmlFor="svCss-fnt">
+        <span>{result[6]}</span>
+        <input
+          type="checkbox"
+          className="svInput"
+          id="svCss-fnt"
+          defaultChecked
+        />
+        CSS Battle
+        <a id="aufgabe" href="https://cssbattle.dev/play/115" target="_blank">
           Link
         </a>
       </label>

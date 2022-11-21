@@ -135,6 +135,10 @@ button.resBtn {
   text-decoration: underline;
 }
 
+.disNone {
+  display: none !important;
+}
+
 /*
 .lord-sur {
   transform: translateY(-50px) scale(1.4);
