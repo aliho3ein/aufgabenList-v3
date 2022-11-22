@@ -121,13 +121,11 @@ let Tutor = (props) => {
         <input type="checkbox" className="svInput" id="svCss-sud" />
         CSS - pseudo Class (:after , :before)
       </label>
-      <label htmlFor="svCss-bc" className="disNone">
+      <label htmlFor="svCss-bc">
         <span>{result[5]}</span>
-        <input type="checkbox" className="svInput" id="svCss-bc" /> CSS -
-        Background ( image , -gradient ... )
+        <input type="checkbox" className="svInput" id="svCss-bc" /> CSS - Grid
       </label>
-
-      <label htmlFor="svCss-shad">
+      <label htmlFor="svCss-shad" className="disNone">
         <span>{result[7]}</span>
         <input type="checkbox" className="svInput" id="svCss-shad" /> CSS -
         shadow (text , box)
